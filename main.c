@@ -269,7 +269,7 @@ int main(int argc, const char** argv, const char** envp)
         int v8 = ftell(input);
         printf("%06lx: ", v8);
         unsigned int pos = read_dword(input);
-        unsigned char tag = fgetc(input);
+        unsigned int tag = fgetc(input);
 
         int do_break = 0;
 
