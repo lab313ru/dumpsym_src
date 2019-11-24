@@ -8,7 +8,7 @@ unsigned char byte_310[] =
   0x06, 0x05, 0x04, 0x03, 0x02, 0x01, 0x00
 };
 
-void sub_39B(int a1)
+void parse_class(int a1)
 {
     unsigned int v1; // edx
     int v2; // ecx
@@ -122,7 +122,7 @@ void sub_39B(int a1)
     }
 }
 
-void sub_504(int a1)
+void parse_type(int a1)
 {
     int v1; // edx
     unsigned int v2; // eax
@@ -340,8 +340,8 @@ int main(int argc, const char** argv, const char** envp)
                 } break;
                 case 0x94: {
                     printf("$%08lx %x Def ", pos, 0x94);
-                    sub_39B(read_word(input));
-                    sub_504(read_word(input));
+                    parse_class(read_word(input));
+                    parse_type(read_word(input));
                     printf("size %ld ", read_dword(input));
                     printf("name ");
                     read_string(input);
@@ -349,8 +349,8 @@ int main(int argc, const char** argv, const char** envp)
                 } break;
                 case 0x96: {
                     printf("$%08lx %x Def2 ", pos, tag);
-                    sub_39B(read_word(input));
-                    sub_504(read_word(input));
+                    parse_class(read_word(input));
+                    parse_type(read_word(input));
                     printf("size %ld ", read_dword(input));
                     unsigned int v40 = read_word(input);
                     printf("dims %ld ", v40);
